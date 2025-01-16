@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "568368338021",
+    "project_id": "authstate-test-app-675ec",
+    "storage_bucket": "authstate-test-app-675ec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568368338021:android:45796946630cf22658e28c",
+        "android_client_info": {
+          "package_name": "com.example.auth_test_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIAsUOvNOvhV_-KSwf-g6GUQaWlQ8VqfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
