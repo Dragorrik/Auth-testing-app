@@ -1,5 +1,5 @@
 import 'package:auth_test_app/auth_services/email_pass_auth.dart';
-import 'package:auth_test_app/pages/home_page.dart';
+import 'package:auth_test_app/auth_services/google_auth.dart';
 import 'package:auth_test_app/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             //Sign in title
             Container(
-              height: screenHeight * 0.24,
+              height: screenHeight * 0.26,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Color(0XFF162535),
@@ -110,8 +110,8 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      AuthService().login(context, emailController.text,
-                          passwordController.text);
+                      EmailPassAuthService().login(context,
+                          emailController.text, passwordController.text);
                       emailController.clear();
                       passwordController.clear();
                     },
@@ -162,7 +162,9 @@ class _LoginPageState extends State<LoginPage> {
                   //google button
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      GoogleAuthService().signInWithGoogle(context);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       padding: EdgeInsets.symmetric(vertical: 15),

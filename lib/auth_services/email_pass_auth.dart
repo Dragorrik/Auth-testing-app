@@ -1,10 +1,11 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:auth_test_app/pages/home_page.dart';
+import 'package:auth_test_app/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class AuthService {
+class EmailPassAuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // SnackBar Function
@@ -81,6 +82,8 @@ class AuthService {
   Future<void> logout(BuildContext context) async {
     try {
       await _auth.signOut();
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
       showSnackBar(context, 'Logged out successfully!', Color(0XFFBAE162));
     } catch (e) {
       showSnackBar(context, 'An error occurred: $e', Colors.redAccent);

@@ -126,15 +126,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     onPressed: () {
                       if (passwordController.text !=
                           confirmPasswordController.text) {
-                        AuthService().showSnackBar(
+                        EmailPassAuthService().showSnackBar(
                           context,
                           "Your password didn't match",
                           Colors.redAccent,
                         );
                         return;
                       }
-                      AuthService().register(context, emailController.text,
-                          passwordController.text);
+                      EmailPassAuthService().register(context,
+                          emailController.text, passwordController.text);
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => LoginPage()));
                       emailController.clear();
